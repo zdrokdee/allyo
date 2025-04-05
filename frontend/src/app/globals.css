@@ -1,15 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 @import "tailwindcss";
+@import "../styles/base/colors.css";
+@import "../styles/base/font.css";
 
 :root {
-  --background: #ffffff;
+  --background: #9b1e1e;
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-geist-mono);  
+  /* colors */
+  --color-background-black: var(--background-black);
+  --color-background-white: var(--background-white);
+  --color-neutral-40: var(--neutral-40);
+  --color-neutral-30: var(--neutral-30);
+  --color-neutral-20: var(--neutral-20);
+  --color-neutral-10: var(--neutral-10);
+  --color-neutral-5: var(--neutral-5);
+  --color-neutral-0: var(--neutral-0);
+  --color-prime-violet: var(--prime-violet);
+  --color-prime-blue: var(--prime-blue);
+  --color-tech-explanation: var(--tech-explanation);
+  --color-tech-attention: var(--tech-attention);
+  --color-tech-suggest: var(--tech-suggest);
+  /* typography */
+  --font-onest: 'Onest', sans-serif;
+  --text-title30-bold: var(--title30-bold);
+  --text-title30-reg: var(--title30-reg);
+  --text-title24-bold: var(--title24-bold);
+  --text-title24-reg: var(--title24-reg);
+  --text-title20-sbold: var(--title20-sbold);
+  --text-title20-reg: var(--title20-reg);
+  --text-body17-sbold: var(--body17-sbold);
+  --text-body17-reg: var(--body17-reg);
+  --text-body16-bold: var(--body16-bold);
+  --text-body16-reg: var(--body16-reg);
+  --text-body15-reg: var(--body15-reg);
+  --text-body14-reg: var(--body14-reg);
+  --text-sub13-reg: var(--sub13-reg);
+  --text-sub12-bold: var(--sub12-bold);
+  --text-sub12-reg: var(--sub12-reg);
+  --text-sub10-bold: var(--sub10-bold);
+  --text-sub10-reg: var(--sub10-reg);
+  /* spacing */
 }
 
 @media (prefers-color-scheme: dark) {
