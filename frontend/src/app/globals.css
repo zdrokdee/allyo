@@ -1,32 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 @import "tailwindcss";
-@import "../styles/base/colors.css";
 @import "../styles/base/font.css";
 
-:root {
-  --background: #9b1e1e;
-  --foreground: #171717;
-}
-
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);  
   /* colors */
-  --color-background-black: var(--background-black);
-  --color-background-white: var(--background-white);
-  --color-neutral-40: var(--neutral-40);
-  --color-neutral-30: var(--neutral-30);
-  --color-neutral-20: var(--neutral-20);
-  --color-neutral-10: var(--neutral-10);
-  --color-neutral-5: var(--neutral-5);
-  --color-neutral-0: var(--neutral-0);
-  --color-prime-violet: var(--prime-violet);
-  --color-prime-blue: var(--prime-blue);
-  --color-tech-explanation: var(--tech-explanation);
-  --color-tech-attention: var(--tech-attention);
-  --color-tech-suggest: var(--tech-suggest);
+  --color-bg-black: #131112;
+  --color-bg-white: #fafafa;
+  --color-neutral-40: #f4f4f4;
+  --color-neutral-30: #c3c3c3;
+  --color-neutral-20: #929292;
+  --color-neutral-10: #626262;
+  --color-neutral-5: #3d3d3d;
+  --color-neutral-0: #202020;
+  --color-prime-violet: #a93ca1;
+  --color-prime-blue: #2d65ca;
+  --color-tech-explanation: #3de783;
+  --color-tech-attention: #f34a4a;
+  --color-tech-suggest: #d6a03d;
   /* typography */
   --font-onest: 'Onest', sans-serif;
   --text-title30-bold: var(--title30-bold);

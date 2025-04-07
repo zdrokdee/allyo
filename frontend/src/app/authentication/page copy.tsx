@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Button from "../../styles/components/buttons/button";
 import Logo80 from "../../styles/components/icons/logo";
+import Layout from "../../styles/components/display/layout";
 
 export default function AuthPage() {
   // Local state for storing the user's email
   const [email, setEmail] = useState("");
 
   return (
-    <div className="relative w-full min-h-screen max-w-[560px] flex flex-col items-center  mx-auto bg-background-white overflow-hidden ">
+    <Layout className=" bg-bg-white">
       <div className="absolute top-[448px]  left-1/2 -translate-x-1/2">
         <Logo80 />
       </div>
@@ -17,6 +18,6 @@ export default function AuthPage() {
         <Button text="Join Allyo" onClick={() => {}} />
         <Button text="Login" onClick={() => {}} />
       </div>
-    </div>
+    </Layout>
   );
 }
