@@ -15,7 +15,7 @@
         font-stretch: normal;
         font-style: normal;
         line-height: 1.33;
-        letter-spacing: -1px;
+        letter-spacing: -0.3px;
     }
     .title24-bold {
         font-family: Onest;
@@ -33,7 +33,25 @@
         font-stretch: normal;
         font-style: normal;
         line-height: 1.33;
-        letter-spacing: -1px;
+        letter-spacing: -0.5px;
+    }
+    .title23-reg {
+        font-family: Onest;
+        font-size: 23px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: -0.5px;
+    }
+    .title22-reg {
+        font-family: Onest;
+        font-size: 22px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: -0.5px;
     }
     .title20-sbold {
         font-family: Onest;
