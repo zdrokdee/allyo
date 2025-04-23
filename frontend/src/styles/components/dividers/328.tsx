@@ -14,7 +14,7 @@ export const Divider328: React.FC<IconProps> = ({ className, ...props }) => (
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         >
-            <path d="M0 1H368" stroke="currentColor" stroke-width="0.8" />
+            <path d="M0 1H368" stroke="currentColor" stroke-width="0.4" />
         </svg>
     </div>
 );

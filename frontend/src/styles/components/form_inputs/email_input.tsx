@@ -4,6 +4,8 @@ import { Divider328 } from "../dividers/328";
 
 interface TextFields extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+
 }
 
 export const EmailInput: React.FC<TextFields> = ({
@@ -26,8 +28,8 @@ export const EmailInput: React.FC<TextFields> = ({
       <Divider328 />
       {value && (
         <CloseIcon16
-          onClick={() => onChange({ target: { value: "" } } as any)}
-          className="text-neutral-20 absolute right-1 top-1/3 transform -translate-y-1/2"
+          onClick={() => onChange?.({ target: { value: "" } } as any)}
+          className="text-neutral-20 absolute right-0.5 top-1/3 transform -translate-y-1/2"
         />
       )}
     </div>

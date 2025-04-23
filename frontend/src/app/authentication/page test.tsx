@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Button from "../../styles/components/buttons/button";
-import Logo80 from "../../styles/logo";
+import Logo80 from "../../styles/components/icons/logo";
 import Layout from "../../styles/components/display/layout";
 import Popup from "../../styles/components/display/popup";
 

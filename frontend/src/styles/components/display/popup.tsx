@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../buttons/button";
 import { CloseIcon24 } from "../icons/icons24";
-import { FacebookIcon24, GoogleIcon24 } from "../../social";
+import { FacebookIcon24, GoogleIcon24 } from "../icons/social";
 
 // Define the type for the Popup props
 interface PopupProps {

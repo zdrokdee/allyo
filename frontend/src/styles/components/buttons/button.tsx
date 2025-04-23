@@ -8,7 +8,7 @@ interface ButtonProps {
     disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
+ const Button: React.FC<ButtonProps> = ({
     icon,
     text,
     onClick,
@@ -23,16 +23,15 @@ const Button: React.FC<ButtonProps> = ({
             onClick={disabled ? undefined : onClick}
             className={`w-[328px] h-[40px] border rounded-[8px] border-neutral-20 body17-reg text-neutral-0 flex items-center justify-center gap-2 transition-transform duration-150 ease-in-out 
                 ${isPressed ? "scale-[1.01]" : "scale-100"}
-                ${disabled ? "bg-neutral-10 text-neutral-20 cursor-not-allowed border-none" : "bg-neutral-40 text-neutral-0"}
+                ${disabled ? "bg-neutral-20 text-neutral-5 cursor-not-allowed border-none" : "bg-neutral-40 text-neutral-0"}
                 ${className}`}
             onTouchStart={() => setIsPressed(true)}
             onTouchEnd={() => setIsPressed(false)}
             onMouseDown={() => setIsPressed(true)}
             onMouseUp={() => setIsPressed(false)}
-            onClick={onClick}
         >
-        {icon}
-        {text}
+            {icon}
+            {text}
         </button>
     );
 };
