@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useState } from "react";
 import Layout from "src/components/display/layout";
 import { CloseIcon12 } from "src/components/icons/icons12";
@@ -9,6 +10,10 @@ import PhotoUpload from "../../components/form_inputs/photo_upload";
 import GenderModal from "../../components/popups/gender";
 import LanguageModal from "../../components/popups/language"; // Import LanguageModal
 import InputCapsuleField from "../../components/form_inputs/input_capsule_filed";
+import {auth} from "src/lib/firebase"; // Initialize Firebase in your frontend
+
+
+
 
 export default function CreateProfilePage() {
   const [formData, setFormData] = useState({
@@ -177,8 +182,31 @@ export default function CreateProfilePage() {
           text="Continue"
           className="absolute bottom-4"
           onClick={async () => {
-            console.log(formData);
+            try {
+              const user = auth.currentUser;
+
+              if (!user) throw new Error("Not authenticated");
+              const idToken = await user.getIdToken();
+          
+              const res = await fetch("/api/profile", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ idToken, formData }),
+              });
+              
+              console.log("Sending data to backend:", { idToken, formData });
+              
+          
+              const result = await res.json();
+              if (!res.ok) throw new Error(result.error || "Failed");
+          
+              console.log("✅ Profile saved:", result);
+              // Navigate or show success
+            } catch (err) {
+              console.error("❌ Failed to submit profile:", err);
+            }
           }}
+          
         />
       </div>
     </Layout>

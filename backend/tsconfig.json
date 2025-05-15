@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "baseUrl": "./",
+        "paths": {
+            "@lib/*": ["src/lib/*"]
+        },
+        "esModuleInterop": true,
+        "skipLibCheck": true
+        },
+        "include": ["src/**/*", "../frontend/src/lib/firebaseAdmin.ts", "../frontend/src/lib/verifyToken.ts"]
+    }
+    

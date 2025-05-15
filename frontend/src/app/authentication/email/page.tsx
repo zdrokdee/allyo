@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { auth } from "@/lib/firebase";
-import Button from "@/styles/components/buttons/button";
-import Layout from "@/styles/components/display/layout";
-import { EmailInput } from "@/styles/components/form_inputs/email_input";
-import { BackIcon24 } from "@/styles/components/icons/icons24";
+import { auth } from "../../../lib/firebase";
+import Button from "../../../components/buttons/button";
+import Layout from "../../../components/display/layout";
+import { EmailInput } from "../../../components/form_inputs/email_input";
+import { BackIcon24 } from "../../../components/icons/icons24";
 import { sendSignInLinkToEmail, sendEmailVerification } from "firebase/auth";
 import { useRouter } from "next/navigation";
 
@@ -18,7 +18,7 @@ export default function EmailPage() {
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(email);
 
   const actionCodeSettings = {
-    url: "http://localhost:3000/authentication/email", // Replace with your app's URL
+    url: "http://localhost:3000/authentication/", // Replace with your app's URL
     handleCodeInApp: true,
   };
 
@@ -34,7 +34,7 @@ export default function EmailPage() {
       alert("Failed to send link. Try again in a few seconds.");
     }
   }
-
+    // Add notification. "Link sent! Check your inbox."
   return (
     <Layout>
       <div className="flex flex-col items-center gap-12  max-w-[328px] ">

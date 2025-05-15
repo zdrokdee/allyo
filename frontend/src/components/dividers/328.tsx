@@ -6,7 +6,7 @@ interface IconProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Divider328: React.FC<IconProps> = ({ className, ...props }) => (
     <div 
-    className={` ${className}`} {...props}>
+    className={` w-full ${className}`} {...props}>
         <svg
         width="328"
         height="1"
@@ -14,7 +14,7 @@ export const Divider328: React.FC<IconProps> = ({ className, ...props }) => (
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         >
-            <path d="M0 1H368" stroke="currentColor" stroke-width="0.4" />
+            <path d="M0 1H368" stroke="currentColor" strokeWidth="0.4" />
         </svg>
     </div>
 );

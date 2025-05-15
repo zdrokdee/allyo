@@ -2,7 +2,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import { Client } from "pg";
-
+import { profileHandler } from "./routes/profile";
 // Load environment variables from the .env file
 dotenv.config();
 
@@ -27,6 +27,8 @@ app.get("/", async (req, res) => {
         res.status(500).send("Error connecting to PostgreSQL");
     }
 });
+
+app.post("/api/profile", profileHandler);
 
 // Start the server
 const PORT = process.env.PORT || 5000;

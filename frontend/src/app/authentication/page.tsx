@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
@@ -7,14 +8,11 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
 } from "firebase/auth";
-import { auth } from "@/lib/firebase";
-import {
-  GoogleIcon24,
-  FacebookIcon24,
-} from "../../styles/components/icons/social";
-import Button from "../../styles/components/buttons/button";
-import Logo80 from "../../styles/components/icons/logo";
-import Layout from "../../styles/components/display/layout";
+import { auth } from "../../lib/firebase";
+import { GoogleIcon24, FacebookIcon24 } from "../../components/icons/social";
+import Button from "../../components/buttons/button";
+import Logo80 from "../../components/icons/logo";
+import Layout from "../../components/display/layout";
 
 export default function AuthPage() {
   // Local state for storing the user's email
@@ -22,8 +20,26 @@ export default function AuthPage() {
   const handleGoogleLogin = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      route.push("/profile"); // or wherever logged-in users go
+      const result = await signInWithPopup(auth, provider);
+
+      const user = result.user;
+      const token = await user.getIdToken(); // This is the Firebase ID token
+
+      // Send the token to your API for verification and to check the user
+      const response = await fetch('/api/verify_user', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,  // Send the token in the Authorization header
+        },
+      });
+
+      const data = await response.json();
+
+      // Check for the redirection in the response and navigate accordingly
+      if (data.redirect) {
+        route.push(data.redirect);  // Redirect to the desired page (e.g., profile or registration)
+      }
+       // or wherever logged-in users go
     } catch (error) {
       console.error("Google login error:", error);
       alert("Google sign-in failed.");
