@@ -1,13 +1,11 @@
 // app/api/profile/route.ts
+import prisma from "src/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
-import { getAuth } from "firebase-admin/auth";
-import prisma from "../../../../../backend/src/lib/prisma";
 
 
 import { verifyFirebaseToken } from "src/lib/verifyToken";
 
 
-import admin from "../../../lib/firebaseAdmin";
 
 
 // ... rest of the code ...  

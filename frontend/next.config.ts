@@ -1,9 +1,14 @@
-import type { NextConfig } from "next";
+const path = require("path");
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    externalDir: true, // allow imports outside frontend/
+  },
+  webpack: (config) => {
+    config.resolve.alias["@backend"] = path.resolve(__dirname, "../backend/src");
+    return config;
+  },
 };
 
-export default nextConfig;
-
+module.exports = nextConfig;

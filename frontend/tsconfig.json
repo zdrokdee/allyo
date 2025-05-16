@@ -20,7 +20,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@backend/*": ["../backend/*"]
+      "@backend/*": ["../backend/src/*"]
     }
   },
   "include": ["node_modules","next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
